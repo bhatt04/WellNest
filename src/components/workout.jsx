@@ -20,7 +20,7 @@ const HeroSection = () => {
 const FitnessCards = () => {
   return (
     <div className="flex flex-col items-center p-8 bg-cover bg-center" style={{ backgroundImage: "url('https://img.freepik.com/premium-photo/blurred-abstract-gym-background-with-workout-equipment-modern-athletic-energy_217468-30303.jpg')" }}>
-      <Navbar />
+      
       <HeroSection />
       <div className="flex flex-wrap justify-center mt-12">
         <div className="fitness-card max-w-xs mx-4 my-4 bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
