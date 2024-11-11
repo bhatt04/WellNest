@@ -91,6 +91,7 @@ function App() {
           <Route path="/books" element={<BookSearch userId={userId} />} />
           <Route path="/search-results" element={<SearchResults />} />
           <Route path="/books/:bookId" element={<BookDetails />} />
+          <Route path="/workout" element={<FitnessCards/>}/>
         </Routes>
       </div>
     </Router>
