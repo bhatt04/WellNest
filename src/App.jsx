@@ -61,6 +61,8 @@ import Home from "./components/Home";
 import UserProfile from "./components/UserProfile";
 import GenreSelectionPage from "./components/GenreSelectionPage";
 import SearchResults from "./components/SearchResults";
+
+import NutritionPage from "./components/Nutrition.jsx";
 function App() {
   const { userId, updateGenres } = useUser();
   const handleGenresSelected = (selectedGenres) => {
@@ -81,6 +83,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
           
+
+          <Route path="/nutri" element={<NutritionPage />} />
           <Route path="/books" element={<BookSearch userId={userId} />} />
           <Route path="/search-results" element={<SearchResults />} />
           <Route path="/books/:bookId" element={<BookDetails />} />
