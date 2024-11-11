@@ -62,6 +62,7 @@ import UserProfile from "./components/UserProfile";
 import GenreSelectionPage from "./components/GenreSelectionPage";
 import SearchResults from "./components/SearchResults";
 
+import Meditation from "./components/Meditation.jsx";
 import NutritionPage from "./components/Nutrition.jsx";
 function App() {
   const { userId, updateGenres } = useUser();
@@ -85,6 +86,8 @@ function App() {
           
 
           <Route path="/nutri" element={<NutritionPage />} />
+          <Route path="/medi" element={<Meditation />} />
+
           <Route path="/books" element={<BookSearch userId={userId} />} />
           <Route path="/search-results" element={<SearchResults />} />
           <Route path="/books/:bookId" element={<BookDetails />} />
