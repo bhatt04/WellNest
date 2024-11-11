@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="relative bg-pink-200 text-white shadow-md overflow-hidden">
+      <nav className="relative bg-white text-pink-400 shadow-md overflow-hidden">
         {/* Dynamic Background */}
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -59,8 +59,7 @@ const Navbar = () => {
               </button>
               <button
                 onClick={handlePreventNavigation}
-                className="text-black font-bold hover:text-pink-600 px-3 py-2 text-sm font-medium transition
-                duration-300"
+                className="text-black font-bold hover:text-pink-600 px-3 py-2 text-sm"
               >
                 About Us
               </button>
