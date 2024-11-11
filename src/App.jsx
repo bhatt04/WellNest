@@ -33,10 +33,6 @@ function App() {
           <Route path="/genreSelection" element={<GenreSelectionPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
-          
-
-          
-
           <Route path="/books" element={<BookSearch userId={userId} />} />
           <Route path="/search-results" element={<SearchResults />} />
           <Route path="/books/:bookId" element={<BookDetails />} />
