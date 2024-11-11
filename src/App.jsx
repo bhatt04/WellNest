@@ -33,6 +33,7 @@ function App() {
           <Route path="/workout" element={<FitnessCards/>}/>
           <Route path="/Meditation" element={<Meditation/>}></Route>
           <Route path="/Nutrition" element = {<NutritionPage/>}></Route>
+          <Route path="/" element={<Home />} />
 
 
         </Routes>
