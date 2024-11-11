@@ -61,6 +61,8 @@ import Home from "./components/Home";
 import UserProfile from "./components/UserProfile";
 import GenreSelectionPage from "./components/GenreSelectionPage";
 import SearchResults from "./components/SearchResults";
+import workout from "./components/workout";
+import FitnessCards from "./components/workout";
 function App() {
   const { userId, updateGenres } = useUser();
   const handleGenresSelected = (selectedGenres) => {
@@ -84,6 +86,7 @@ function App() {
           <Route path="/books" element={<BookSearch userId={userId} />} />
           <Route path="/search-results" element={<SearchResults />} />
           <Route path="/books/:bookId" element={<BookDetails />} />
+          <Route path="/workout" element={<FitnessCards/>}/>
         </Routes>
       </div>
     </Router>
