@@ -4,22 +4,22 @@ import { Book, BookOpen, Bookmark, Star, Award, Edit2, Save, X } from 'lucide-re
 export default function BookLoverProfile() {
 const [isEditing, setIsEditing] = useState(false)
 const [userInfo, setUserInfo] = useState({
-name: 'Megha Bhatt',
-location: 'Delhi, India',
-bio: 'aspiring',
-favoriteGenres: ['Fantasy', 'Mystery', 'Historical Fiction', 'Science Fiction'],
-currentlyReading: 'The Midnight Library by Matt Haig',
-booksReadThisYear: '27',
-readingGoal: '52',
-favoriteQuote: '"A reader lives a thousand lives before he dies. The man who never reads lives only one." - George R.R.Martin',
-topAuthors: ['Jane Austen', 'Neil Gaiman', 'Agatha Christie', 'Brandon Sanderson'],
-bookshelfSize: '500+',
-favoriteBookstores: ['The Strand', 'Powell\'s Books', 'Shakespeare and Company'],
-readingChallenges: ['Read 10 classics', 'Explore 5 new genres', 'Read 3 books in original language'],
+name: '',
+location: '',
+bio: '',
+favoriteGenres: [''],
+currentlyReading: '',
+booksReadThisYear: '',
+readingGoal: '',
+favoriteQuote: '',
+topAuthors: [''],
+bookshelfSize: '',
+favoriteBookstores: [''],
+readingChallenges: [''],
 })
 const [bookList, setBookList] = useState([
-{ id: 1, title: 'Pride and Prejudice', author: 'Jane Austen', rating: 5 },
-{ id: 2, title: 'The Name of the Wind', author: 'Patrick Rothfuss', rating: 5 },
+{ id: 1, title: '', author: '', rating: 5 },
+{ id: 2, title: '', author: '', rating: 5 },
 
 ])
 const toggleEdit = () => setIsEditing(!isEditing)
@@ -34,7 +34,7 @@ setUserInfo(prev => ({ ...prev, [field]: values }))
 const addBook = () => {
 const newBook = {
 id: bookList.length + 1,
-title: 'New Book Title',
+title: 'New Trainer',
 author: 'Author Name',
 rating: 0
 }

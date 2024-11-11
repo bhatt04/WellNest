@@ -5,7 +5,8 @@ import image2 from '../assets/2.jpg';
 import image3 from '../assets/3.jpg';
 import image4 from '../assets/main.jpg';
 
-const images = [image1, image2, image3, image4];  // Use imported images
+const images = [image1, image2, image3, image4];
+const links = ['/meditation', '/workout', '/nutrition', '/home']; // Links corresponding to each image
 
 const ImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,12 +21,14 @@ const ImageSlider = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-110 py-1 my-1  overflow-hidden">
-      <img
-        src={images[currentIndex]}
-        alt={`Slide ${currentIndex + 1}`}
-        className="w-full h-full object-cover transition-all duration-1000 ease-in-out"
-      />
+    <div className="relative w-full h-110 py-1 my-1 overflow-hidden">
+      <a href={links[currentIndex]}> {/* Wrap image in an <a> tag for navigation */}
+        <img
+          src={images[currentIndex]}
+          alt={`Slide ${currentIndex + 1}`}
+          className="w-full h-full object-cover transition-all duration-1000 ease-in-out"
+        />
+      </a>
       {/* Optional: Add navigation dots */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {images.map((_, index) => (
