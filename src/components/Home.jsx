@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Wellnest from "../assets/WellNest.jpg";
 import ImageSlider from "./slider";
+import BmiCalculator from "./bmi";
 
 import {
   Book,
@@ -44,6 +45,7 @@ export default function Home() {
 
         </section>
         <section><ImageSlider/></section>
+        <section><BmiCalculator/></section>
 
       </main>
     </div>
