@@ -22,6 +22,7 @@ function App() {
         {location.pathname !== "/home" && <Navbar />}
         <Routes>
           <Route path="/about" element={<About />} />
+          <Route path="/" element={<Home />} />
 
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
