@@ -36,8 +36,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           
 
-          <Route path="/nutri" element={<NutritionPage />} />
-          <Route path="/medi" element={<Meditation />} />
+          
 
           <Route path="/books" element={<BookSearch userId={userId} />} />
           <Route path="/search-results" element={<SearchResults />} />
