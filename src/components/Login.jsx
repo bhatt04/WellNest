@@ -115,12 +115,9 @@ const Login = () => {
     }
   };
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-900 to-black text-white">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-pink-900 to-pink-200 text-white">
       {/* Dynamic Background */}
-      <div
-        className="absolute inset-0 bg-pink-500"
-        
-      ></div>
+      
       {/* Floating Particles */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         

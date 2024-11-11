@@ -29,19 +29,7 @@ export default function Home() {
           </div>
 
           
-          <div className="bg-lime-300 py-2">
-            <div className="container mx-auto flex justify-center items-center">
-                <nav className="flex space-x-6">
-                <a href="#" className="text-black hover:text-pink-500">Home</a>
-                <a href="#about" className="text-black hover:text-pink-500">About Us</a>
-                <a href="#services" className="text-black hover:text-pink-500">Services</a>
-                <a href="#shop" className="text-black hover:text-pink-500">Shop</a>
-                <a href="#journal" className="text-black hover:text-pink-500">Journal</a>
-                <a href="#contact" className="text-black hover:text-pink-500">Contact</a>
-              </nav>
-          </div>
-        
-        </div>
+          
 
         </section>
         <section><ImageSlider/></section>

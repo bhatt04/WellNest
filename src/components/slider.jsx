@@ -20,7 +20,7 @@ const ImageSlider = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-110 py-2 my-2  overflow-hidden">
+    <div className="relative w-full h-110 py-1 my-1  overflow-hidden">
       <img
         src={images[currentIndex]}
         alt={`Slide ${currentIndex + 1}`}
