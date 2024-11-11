@@ -21,7 +21,7 @@ function App() {
         {/* Navbar is rendered once and is visible on all pages */}
         {location.pathname !== "/home" && <Navbar />}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
 
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />

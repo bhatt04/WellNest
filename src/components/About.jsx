@@ -1,112 +1,108 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-const BookCover = ({ text, color }) => (
-  <div
-    className={`w-32 h-48 ${color} rounded-lg shadow-lg flex flex-col justify-center items-center p-4 transform transition-all duration-300 hover:scale-110`}
-  >
-    <p className="text-white text-md font-semibold text-center">{text}</p>
-  </div>
-);
-const About = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
-  const books = [
-    {
-      text: "A Reading Experience That Feels Just Right",
-      color: "bg-gradient-to-r from-blue-800 to-blue-500",
-    },
-    {
-      text: "Explore Unlimited Genres & Accurate Insights",
-      color: "bg-gradient-to-r from-green-800 to-green-500",
-    },
-    {
-      text: "Discover Books That Speak to Your Soul",
-      color: "bg-gradient-to-r from-red-800 to-red-500",
-    },
-  ];
+import React from 'react';
+
+const AboutUs = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-900 to-black text-white">
-      {/* Dynamic Background */}
-      <div
-        className="absolute inset-0 bg-pink-500"
-        style={{
-          backgroundPosition: `${mousePosition.x}px ${mousePosition.y}px`,
-          transition: "background-position 0.3s ease-out",
-        }}
-      ></div>
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-4">
-        <h1 className="text-6xl font-bold mb-6 tracking-wide">
-          {" "}
-          <span className="text-transparent bg-clip-text bg-white">
-            WellNest
-          </span>
-        </h1>
-        {/* Interactive Book Showcase */}
-        <div
-          className="flex space-x-4 mb-8 perspective-1000"
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
-        >
-          {books.map((book, index) => (
-            <div
-              key={book.title}
-              className="transform transition-all duration-500"
-              style={{
-                transform: isHovering
-                  ? `rotateY(${(index - 2) * 15}deg) translateZ(${
-                      Math.abs(index - 2) * 20
-                    }px)`
-                  : "rotateY(0) translateZ(0)",
-              }}
-            >
-              <BookCover {...book} />
-            </div>
-          ))}
+    <div className="bg-white text-gray-800 min-h-screen">
+      
+      {/* Hero Section */}
+      <section className="relative h-96 bg-cover bg-center bg-[url('https://example.com/hero-image.jpg')]">
+        <div className="absolute inset-0 bg-teal-600 opacity-50"></div>
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <h1 className="text-4xl sm:text-5xl font-semibold text-white text-center px-4">
+            Welcome to <span className="text-yellow-400">Wellnest</span> - Your Path to Wellness
+          </h1>
         </div>
-        <p className="text-xl mb-8 leading-relaxed max-w-2xl mx-auto text-center font-serif">
-          elevate your  journey today!
-        </p>
-        {/* Interactive Buttons */}
-        <div className="flex space-x-6 mt-10">
-          <Link
-            to="/login"
-            className="group relative px-8 py-3 overflow-hidden rounded-lg bg-white text-gray-900 shadow-2xl transition-all duration-300 hover:scale-105"
-          >
-            <span
-              className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100
-transition-opacity duration-300 z-0"
-            ></span>
-            <span className="relative z-10 font-semibold group-hover:text-white transition-colors duration-300">
-              Login
-            </span>
-          </Link>
-          <Link
-            to="/register"
-            className="group relative px-8 py-3 overflow-hidden rounded-lg bg-purple-600 text-white shadow-2xl transition-all duration-300 hover:scale-105"
-          >
-            <span
-              className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-100
-transition-opacity duration-300 z-0"
-            ></span>
-            <span className="relative z-10 font-semibold">Register</span>
-          </Link>
+      </section>
+      
+      {/* Our Mission */}
+      <section className="px-6 sm:px-16 py-12 text-center bg-teal-50">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-teal-700 mb-4">Our Mission</h2>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            At Wellnest, we believe wellness is a journey, not a destination. Our mission is to empower individuals with the tools, knowledge, and community needed to achieve holistic health and balance. From mindfulness to nutrition, we’re here to support your journey every step of the way.
+          </p>
         </div>
-      </div>
-      {/* Floating Particles */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        
-      </div>
+      </section>
+      
+      {/* Values Section */}
+      <section className="px-6 sm:px-16 py-12 bg-white">
+        <h2 className="text-3xl font-bold text-center text-teal-700 mb-8">Our Core Values</h2>
+        <div className="flex flex-col md:flex-row gap-6 text-center md:text-left justify-center">
+          <div className="md:w-1/3 bg-teal-100 p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold text-teal-700 mb-2">Holistic Health</h3>
+            <p className="text-gray-600">
+              We embrace a whole-person approach that integrates physical, mental, and emotional well-being.
+            </p>
+          </div>
+          <div className="md:w-1/3 bg-teal-100 p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold text-teal-700 mb-2">Community First</h3>
+            <p className="text-gray-600">
+              Building a supportive community where individuals can connect, grow, and inspire one another.
+            </p>
+          </div>
+          <div className="md:w-1/3 bg-teal-100 p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold text-teal-700 mb-2">Sustainable Wellness</h3>
+            <p className="text-gray-600">
+              Encouraging sustainable, lasting wellness practices for a balanced, mindful life.
+            </p>
+          </div>
+        </div>
+      </section>
+      
+      {/* Meet Our Team */}
+      <section className="px-6 sm:px-16 py-12 bg-teal-50">
+        <h2 className="text-3xl font-bold text-center text-teal-700 mb-8">Meet Our Wellness Coaches</h2>
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          
+          {/* Coach 1 */}
+          <div className="bg-white p-6 rounded-lg shadow-md max-w-xs text-center">
+            <img
+              src="https://example.com/coach1.jpg"
+              alt="Coach 1"
+              className="w-32 h-32 rounded-full mx-auto mb-4"
+            />
+            <h3 className="text-xl font-semibold text-teal-700">Amelia Hayes</h3>
+            <p className="text-gray-600">Mindfulness & Meditation Coach</p>
+          </div>
+          
+          {/* Coach 2 */}
+          <div className="bg-white p-6 rounded-lg shadow-md max-w-xs text-center">
+            <img
+              src="https://example.com/coach2.jpg"
+              alt="Coach 2"
+              className="w-32 h-32 rounded-full mx-auto mb-4"
+            />
+            <h3 className="text-xl font-semibold text-teal-700">Ethan Brown</h3>
+            <p className="text-gray-600">Certified Nutritionist</p>
+          </div>
+          
+          {/* Coach 3 */}
+          <div className="bg-white p-6 rounded-lg shadow-md max-w-xs text-center">
+            <img
+              src="https://example.com/coach3.jpg"
+              alt="Coach 3"
+              className="w-32 h-32 rounded-full mx-auto mb-4"
+            />
+            <h3 className="text-xl font-semibold text-teal-700">Sophia Martinez</h3>
+            <p className="text-gray-600">Yoga & Wellness Instructor</p>
+          </div>
+        </div>
+      </section>
+      
+      {/* Call to Action */}
+      <section className="px-6 sm:px-16 py-12 bg-teal-600 text-white text-center">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Join the Wellnest Community</h2>
+          <p className="text-lg mb-6 leading-relaxed">
+            Take a step towards a healthier, balanced life. Sign up today and become part of a community dedicated to well-being and personal growth.
+          </p>
+          <button className="mt-4 px-8 py-3 bg-yellow-400 text-teal-800 font-semibold rounded-lg shadow-lg hover:bg-yellow-300">
+            Get Started
+          </button>
+        </div>
+      </section>
     </div>
   );
 };
-export default About;
+
+export default AboutUs;
