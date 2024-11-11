@@ -6,6 +6,7 @@ import image3 from '../assets/3.jpg';
 import image4 from '../assets/main.jpg';
 
 const images = [image1, image2, image3, image4];  // Use imported images
+const links = ['/page1', '/page2', '/page3', '/page4'];
 
 const ImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
