@@ -97,7 +97,7 @@ const AboutUs = () => {
           <p className="text-lg mb-6 leading-relaxed">
             Take a step towards a healthier, balanced life. Sign up today and become part of a community dedicated to well-being and personal growth.
           </p>
-          <Link to="/ContactUs" className="mt-4 px-8 py-3 bg-yellow-400 text-teal-800 font-semibold rounded-lg shadow-lg hover:bg-yellow-300">
+          <Link to="/Contact" className="mt-4 px-8 py-3 bg-yellow-400 text-teal-800 font-semibold rounded-lg shadow-lg hover:bg-yellow-300">
             Get Started
           </Link>
         </div>

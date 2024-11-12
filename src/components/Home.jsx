@@ -4,14 +4,7 @@ import Wellnest from "../assets/WellNest title.jpg";
 import ImageSlider from "./slider";
 import BmiCalculator from "./bmi";
 
-import {
-  Book,
-  Sparkles,
-  Users,
-  TrendingUp,
-  Search,
-  BookOpen,
-} from "lucide-react";
+
 
 export default function Home() {
   return (
