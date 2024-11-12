@@ -1,6 +1,5 @@
-// NutritionPage.jsx
 import React from 'react';
-// import Navbar from "../components/Navbar";
+import { Link } from 'react-router-dom';
 const NutritionPage = () => {
   return (
     <div className="container mx-auto">
@@ -22,9 +21,11 @@ const HeroSection = () => {
       <p className="text-lg md:text-xl text-white max-w-3xl mx-auto mb-8 leading-relaxed">
         Whether you're a beginner or a nutrition enthusiast, our expert dieticians create personalized, effective meal plans. Our approach is designed to help you achieve your nutrition goals and build a healthier lifestyle.
       </p>
+      <Link to="/contact">
       <button className="bg-purple-700 text-white py-3 px-6 rounded-full text-lg hover:bg-orange-500 transition-colors duration-300">
         Find Your Plan to Learn More
       </button>
+      </Link>
     </section>
   );
 };
@@ -61,11 +62,14 @@ const InfoCards = () => {
   return (
     <section className="flex flex-wrap mt-4 justify-center gap-6 py-12 bg-blue-100">
       {cards.map((card, index) => (
+        
         <div key={index} className="w-full sm:w-1/2 lg:w-1/3 bg-white rounded-lg shadow-md p-6 text-center hover:transform hover:-translate-y-2 transition-transform duration-300">
-          <img src={card.image} alt={card.title} className="w-full h-56 object-cover rounded-lg mb-4" />
+          <Link to='/contact'><img src={card.image} alt={card.title} className="w-full h-56 object-cover rounded-lg mb-4" /></Link>
           <h3 className="text-xl font-semibold text-purple-700 mb-2">{card.title}</h3>
           <p className="text-gray-700 text-base leading-relaxed">{card.description}</p>
+          <button>View</button>
         </div>
+        
       ))}
     </section>
   );

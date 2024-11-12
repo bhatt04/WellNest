@@ -33,7 +33,7 @@ const BmiCalculator = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-pink-200  shadow-lg">
+    <div className="max-w-lg mx-auto p-6 mt-24 bg-pink-200  shadow-lg">
       <h2 className="text-2xl font-semibold text-center mb-6">BMI Calculator</h2>
       
       <div className="mb-4">
@@ -44,7 +44,7 @@ const BmiCalculator = () => {
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
           className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          placeholder="Enter weight"
+          placeholder="Enter weight: "
         />
       </div>
 
@@ -56,7 +56,7 @@ const BmiCalculator = () => {
           value={height}
           onChange={(e) => setHeight(e.target.value)}
           className="w-full p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          placeholder="Enter height"
+          placeholder="Enter height: "
         />
       </div>
 
@@ -68,7 +68,7 @@ const BmiCalculator = () => {
       </button>
 
       {bmi && (
-        <div className="mt-6 text-center">
+        <div className="mt-6 text-center mt-10 border-4 border-white" >
           <p className="text-xl font-semibold">Your BMI: {bmi}</p>
           <p className="text-lg mt-2 text-gray-700">Category: {bmiCategory}</p>
         </div>

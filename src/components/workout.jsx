@@ -33,11 +33,11 @@ const FitnessCards = () => {
       <HeroSection />
       <div className="flex flex-wrap justify-center mt-12">
         <div className="fitness-card max-w-xs mx-4 my-4 bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-          <img
+          <Link to="/contact"><img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyY_eQHwnpTEnFEvOAiHxEv1MjzYaDIPqZDQ&s"
             alt="Fitness Consultation"
             className="w-full h-48 object-cover rounded-lg mb-4"
-          />
+          /></Link>
           <h3 className="text-lg text-purple-700 mb-4 font-bold">FITNESS CONSULTATION</h3>
           <p className="text-gray-700 text-sm leading-relaxed">
             Gain confidence for your fitness journey with our personalized fitness
@@ -47,7 +47,7 @@ const FitnessCards = () => {
         </div>
 
         <div className="fitness-card max-w-xs mx-4 my-4 bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-          <img
+        <Link to="/contact"><img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYjrQggUeuV-uAPFc7oDUKlFc60AVPia_lZw&s"
             alt="Group Fitness"
             className="w-full h-48 object-cover rounded-lg mb-4"
@@ -57,15 +57,15 @@ const FitnessCards = () => {
             WellNest offers instructor-led dynamic and engaging group
             classes. These group classes help individuals gain confidence and
             build a social aspect that keeps them mentally fit.
-          </p>
+          </p></Link>
         </div>
 
         <div className="fitness-card max-w-xs mx-4 my-4 bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-          <img
+        <Link to="/contact"><img
             src="https://jackcityfitness.com/wp-content/uploads/bigstock-A-Personal-Trainer-Motivates-T-440620910-1250x834.jpg"
             alt="Personalized Training"
             className="w-full h-48 object-cover rounded-lg mb-4"
-          />
+          /></Link>
           <h3 className="text-lg text-purple-700 mb-4 font-bold">PERSONALIZED TRAINING</h3>
           <p className="text-gray-700 text-sm leading-relaxed">
             At WellNest, we offer personalized training for every specific
@@ -75,11 +75,11 @@ const FitnessCards = () => {
         </div>
 
         <div className="fitness-card max-w-xs mx-4 my-4 bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-          <img
+        <Link to="/contact"><img
             src="https://media.istockphoto.com/id/693103622/photo/smiling-people-doing-power-fitness-exercise-at-yoga-class.jpg?s=612x612&w=0&k=20&c=E1vzKxbcZ7UbYkaJnT9Pbir0xwFmWqxquQjM4iAjBDU="
             alt="Aerobics"
             className="w-full h-48 object-cover rounded-lg mb-4"
-          />
+          /></Link>
           <h3 className="text-lg text-purple-700 mb-4 font-bold">AEROBICS</h3>
           <p className="text-gray-700 text-sm leading-relaxed">
             Join our high-energy aerobics sessions to improve cardiovascular health,
