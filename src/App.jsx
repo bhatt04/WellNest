@@ -5,7 +5,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import About from "./components/About";
 import Home from "./components/Home";
-
+import WorkoutJournal from"./components/WorkoutJournal";
 import FitnessCards from "./components/workout";
 import Meditation from "./components/Meditation";
 import NutritionPage from "./components/Nutrition";
@@ -31,6 +31,7 @@ function App() {
           <Route path="/workout" element={<FitnessCards/>}/>
           <Route path="/meditation" element={<Meditation/>}></Route>
           <Route path="/nutrition" element = {<NutritionPage/>}></Route>
+          <Route path="/journal" element = {<WorkoutJournal/>}></Route>
         </Routes>
       </div>
     </Router>
