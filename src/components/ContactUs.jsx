@@ -19,8 +19,15 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-5">
-      <div className="w-full max-w-lg bg-white rounded-lg shadow-lg p-8">
+    <div
+      className="flex flex-col items-center justify-center min-h-screen p-5 bg-cover bg-center"
+      style={{
+        backgroundImage: "url('https://img.freepik.com/premium-photo/healthy-lifestyle-food-sport-concept-athlete-s-equipment-fresh-fruit-white-background_61573-3385.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="w-full max-w-lg bg-white bg-opacity-90 rounded-lg shadow-lg p-8">
         <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
           Contact Us
         </h2>
