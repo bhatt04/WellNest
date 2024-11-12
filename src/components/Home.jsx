@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Wellnest from "../assets/WellNest.jpg";
+import Wellnest from "../assets/WellNest title.jpg";
 import ImageSlider from "./slider";
 import BmiCalculator from "./bmi";
 
@@ -22,18 +22,15 @@ export default function Home() {
 
 
           <div className="bg-white container mx-auto flex flex-col justify-center items-center py-2">
-            <img src={Wellnest} alt="Wellnest" mx-auto className="w-[80%] sm:w-1/2 md:w-1/3 lg:w-1/4" />
+            <img src={Wellnest} alt="Wellnest" mx-auto className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2" />
             <h2 className="text-2xl sm:text-2xl font-bold italic text-pink-400 mb-6">
             Nourish your mind Nourish your soul
             </h2>
           </div>
 
-          
-          
-
         </section>
         <section><ImageSlider/></section>
-        <section><BmiCalculator/></section>
+        <section id="bmi"><BmiCalculator/></section>
 
       </main>
     </div>
