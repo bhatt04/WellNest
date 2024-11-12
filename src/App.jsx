@@ -5,7 +5,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import About from "./components/About";
 import Home from "./components/Home";
-
+import Journal from "./components/Journal";
 import FitnessCards from "./components/workout";
 import Meditation from "./components/Meditation";
 import NutritionPage from "./components/Nutrition";
@@ -28,12 +28,13 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
           
-
+        
           <Route path="/nutri" element={<NutritionPage />} />
           <Route path="/medi" element={<Meditation />} />
           <Route path="/workout" element={<FitnessCards/>}/>
           <Route path="/Meditation" element={<Meditation/>}></Route>
           <Route path="/Nutrition" element = {<NutritionPage/>}></Route>
+          <Route path="/journal" element = {<Journal/>}></Route>
 
 
         </Routes>
