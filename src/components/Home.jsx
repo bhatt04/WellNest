@@ -30,39 +30,58 @@ export default function Home() {
 
         <section>
         <div className="flex flex-wrap justify-center gap-6 p-6 bg-gray-100">
-      {/* Card 1 */}
-      <div className="max-w-sm p-6 bg-white rounded-lg shadow-lg text-center">
-        <div className="flex justify-center mb-4">
-          <i className="text-red-500 text-4xl fas fa-clock"></i>
-        </div>
-        <h3 className="text-xl font-bold mb-2">PROGRESSION</h3>
-        <p className="text-gray-700">
-          Our team of experts will work with you to create a customized plan that helps you achieve success one step at a time.
-        </p>
-      </div>
-
-      {/* Card 2 */}
-      <div className="max-w-sm p-6 bg-white rounded-lg shadow-lg text-center">
-        <div className="flex justify-center mb-4">
-          <i className="text-red-500 text-4xl fas fa-dumbbell"></i>
-        </div>
-        <h3 className="text-xl font-bold mb-2">WORKOUT</h3>
-        <p className="text-gray-700">
-          With a variety of workouts to choose from, you'll have everything you need to get into the best shape of your life.
-        </p>
-      </div>
-
-      {/* Card 3 */}
-      <div className="max-w-sm p-6 bg-white rounded-lg shadow-lg text-center">
-        <div className="flex justify-center mb-4">
-          <i className="text-red-500 text-4xl fas fa-clipboard-list"></i>
-        </div>
-        <h3 className="text-xl font-bold mb-2">NUTRITIONS</h3>
-        <p className="text-gray-700">
-          Our team will work with you to create a personalized meal plan that helps you reach your specific health goals.
-        </p>
-      </div>
+  {/* Card 1 */}
+  <div className="max-w-sm p-6 bg-white rounded-lg shadow-lg text-center group">
+    <div className="flex justify-center mb-4">
+      <i className="text-red-500 text-4xl fas fa-clock"></i>
     </div>
+    <h3 className="text-xl font-bold mb-2">PROGRESSION</h3>
+    <p className="text-gray-700">
+      Our team of experts will work with you to create a customized plan that helps you achieve success one step at a time.
+    </p>
+    {/* Image visible on hover */}
+    <img 
+      src="https://via.placeholder.com/150" 
+      alt="Progression"
+      className="hidden group-hover:block w-full mt-4 rounded-lg transition-all duration-300" 
+    />
+  </div>
+
+  {/* Card 2 */}
+  <div className="max-w-sm p-6 bg-white rounded-lg shadow-lg text-center group">
+    <div className="flex justify-center mb-4">
+      <i className="text-red-500 text-4xl fas fa-dumbbell"></i>
+    </div>
+    <h3 className="text-xl font-bold mb-2">WORKOUT</h3>
+    <p className="text-gray-700">
+      With a variety of workouts to choose from, you'll have everything you need to get into the best shape of your life.
+    </p>
+    {/* Image visible on hover */}
+    <img 
+      src="https://via.placeholder.com/150" 
+      alt="Workout"
+      className="hidden group-hover:block w-full mt-4 rounded-lg transition-all duration-300" 
+    />
+  </div>
+
+  {/* Card 3 */}
+  <div className="max-w-sm p-6 bg-white rounded-lg shadow-lg text-center group">
+    <div className="flex justify-center mb-4">
+      <i className="text-red-500 text-4xl fas fa-clipboard-list"></i>
+    </div>
+    <h3 className="text-xl font-bold mb-2">NUTRITIONS</h3>
+    <p className="text-gray-700">
+      Our team will work with you to create a personalized meal plan that helps you reach your specific health goals.
+    </p>
+    {/* Image visible on hover */}
+    <img 
+      src="https://via.placeholder.com/150" 
+      alt="Nutritions"
+      className="hidden group-hover:block w-full mt-4 rounded-lg transition-all duration-300" 
+    />
+  </div>
+</div>
+
         </section>
         <section id="bmi"><BmiCalculator/></section>
 
