@@ -67,7 +67,6 @@ const InfoCards = () => {
           <Link to='/contact'><img src={card.image} alt={card.title} className="w-full h-56 object-cover rounded-lg mb-4" /></Link>
           <h3 className="text-xl font-semibold text-purple-700 mb-2">{card.title}</h3>
           <p className="text-gray-700 text-base leading-relaxed">{card.description}</p>
-          <button>View</button>
         </div>
         
       ))}
