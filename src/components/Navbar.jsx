@@ -52,7 +52,7 @@ const Navbar = () => {
                 Home
               </button>
               <button className="text-black font-bold hover:text-pink-600 px-3 py-2 text-sm">About Us</button>
-              <button className="text-black font-bold hover:text-pink-600 px-3 py-2 text-sm">Contact</button>
+              <button className="text-black font-bold hover:text-pink-600 px-3 py-2 text-sm">Journal</button>
               <a href="#bmi"><button className="text-blue-600 font-bold hover:text-pink-600 px-3 py-2 text-sm">BMI </button></a>
 
               {/* Services Dropdown */}
