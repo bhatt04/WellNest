@@ -6,7 +6,7 @@ const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
+  //const [username, setUsername] = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   useEffect(() => {
@@ -22,14 +22,17 @@ const Register = () => {
     e.preventDefault();
     setError(null);
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/register", {
+      const response = await axios.post("http://localhost:3000/api/auth/register", {
         name,
         email,
-        password,
-        username,
+        password
+       
       });
       navigate("/login");
     } catch (err) {
+      console.log({ name, email, password });
+      console.log(err.response);
+
       setError(err.response?.data.message || "Error registering");
     }
   };
@@ -72,7 +75,7 @@ focus:ring-blue-500"
 focus:ring-blue-500"
               required
             />
-            <input
+            {/* <input
               type="text"
               placeholder="Username"
               value={username}
@@ -80,7 +83,7 @@ focus:ring-blue-500"
               className="border text-blue-950 font-semibold p-3 rounded-lg w-full mb-4 focus:outline-none focus:ring-2
 focus:ring-blue-500"
               required
-            />
+            /> */}
             <button
               type="submit"
               className="w-1/4 py-3 bg-white text-pink-600 border-2 border-pink-600 font-semibold rounded-lg shadow-lg hover:bg-pink-400 hover:text-white">

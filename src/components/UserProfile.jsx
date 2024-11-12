@@ -42,8 +42,9 @@ export default function WellnessProfile() {
                     value={userInfo.name}
                     onChange={handleInputChange}
                     className="bg-transparent border-b w-full"
+                    placeholder="Enter your name"
                   />
-                ) : userInfo.name}
+                ) : userInfo.name || 'Name not set'}
               </h1>
               <p className="text-green-200">
                 {isEditing ? (
@@ -53,8 +54,9 @@ export default function WellnessProfile() {
                     value={userInfo.location}
                     onChange={handleInputChange}
                     className="bg-transparent border-b"
+                    placeholder="Enter your location"
                   />
-                ) : userInfo.location}
+                ) : userInfo.location || 'Location not set'}
               </p>
             </div>
           </div>
@@ -91,9 +93,10 @@ export default function WellnessProfile() {
                   onChange={handleInputChange}
                   className="w-full p-2 border rounded"
                   rows={4}
+                  placeholder="Share something about your wellness journey..."
                 />
               ) : (
-                <p className="text-gray-700">{userInfo.bio}</p>
+                <p className="text-gray-700">{userInfo.bio || 'No bio available'}</p>
               )}
             </section>
 
@@ -113,9 +116,10 @@ export default function WellnessProfile() {
                       value={userInfo.wellnessGoals}
                       onChange={handleInputChange}
                       className="w-full p-2 border rounded"
+                      placeholder="Enter your wellness goals"
                     />
                   ) : (
-                    <p>{userInfo.wellnessGoals}</p>
+                    <p>{userInfo.wellnessGoals || 'No wellness goals set'}</p>
                   )}
                 </div>
                 <div>
@@ -126,12 +130,17 @@ export default function WellnessProfile() {
                       value={userInfo.wellnessInterests.join(', ')}
                       onChange={(e) => handleArrayInputChange(e, 'wellnessInterests')}
                       className="w-full p-2 border rounded"
+                      placeholder="Enter your wellness interests, separated by commas"
                     />
                   ) : (
                     <ul className="list-disc list-inside">
-                      {userInfo.wellnessInterests.map((interest, index) => (
-                        <li key={index}>{interest}</li>
-                      ))}
+                      {userInfo.wellnessInterests.length ? (
+                        userInfo.wellnessInterests.map((interest, index) => (
+                          <li key={index}>{interest}</li>
+                        ))
+                      ) : (
+                        <li>No interests added</li>
+                      )}
                     </ul>
                   )}
                 </div>
@@ -150,12 +159,17 @@ export default function WellnessProfile() {
                   onChange={(e) => setUserInfo(prev => ({ ...prev, achievements: e.target.value.split('\n') }))}
                   className="w-full p-2 border rounded"
                   rows={4}
+                  placeholder="List your achievements, one per line"
                 />
               ) : (
                 <ul className="list-disc list-inside">
-                  {userInfo.achievements.map((achievement, index) => (
-                    <li key={index}>{achievement}</li>
-                  ))}
+                  {userInfo.achievements.length ? (
+                    userInfo.achievements.map((achievement, index) => (
+                      <li key={index}>{achievement}</li>
+                    ))
+                  ) : (
+                    <li>No achievements added</li>
+                  )}
                 </ul>
               )}
             </section>

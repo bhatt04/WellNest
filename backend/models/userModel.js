@@ -39,27 +39,27 @@
 // };
 
 // module.exports = mongoose.model('User', userSchema);
+//const mongoose = require('mongoose');
+
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
+    required: [true, 'Name is required'],  // Ensure 'name' is required
   },
   email: {
     type: String,
-    required: true,
-    unique: true,
+    required: [true, 'Email is required'],
+    unique: true,  // Ensure email is unique
   },
   password: {
     type: String,
-    required: true,
-  },
-  username: {
-    type: String,
-    required: true,
+    required: [true, 'Password is required'],
   },
 });
 
 const User = mongoose.model('User', userSchema);
+
 module.exports = User;
+

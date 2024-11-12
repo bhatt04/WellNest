@@ -1,3 +1,4 @@
+// Login.jsx
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useUser } from "../context/UserContext";
@@ -25,11 +26,11 @@ const Login = () => {
       localStorage.setItem("token", response.data.token);
 
       // Redirect on successful login
-      navigate("/journal");
+      navigate("/userProfile");
     } catch (error) {
       // Set error message if login fails
       setError(
-        error.response?.data?.message || "An error occurred. Please try again."
+        error.response?.data?.message || "An error occurred. Please try again.\."
       );
     } finally {
       setLoading(false);
@@ -63,15 +64,15 @@ const Login = () => {
               className="border text-blue-950 font-semibold p-3 rounded-lg w-full mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
-            <button
-              type="submit"
-              disabled={loading} // Disable button while loading
-              className={`w-full py-3 bg-pink-600 text-white font-semibold rounded-lg shadow-lg transition-colors hover:bg-pink-500 ${
-                loading && "opacity-50 cursor-not-allowed"
-              }`}
-            >
-              {loading ? "Logging in..." : "Login"}
-            </button>
+           <button
+  type="submit"
+  disabled={loading} // Disable button while loading
+  className={`w-full py-3 bg-pink-600 text-white font-semibold rounded-lg shadow-lg transition-colors hover:bg-pink-500 ${
+    loading ? "opacity-50 cursor-not-allowed" : ""
+  }`}
+>
+  {loading ? "Logging in..." : "Login"}
+</button>
           </form>
           <p className="mt-6 text-gray-700">
             Don’t have an account?{" "}
@@ -89,4 +90,3 @@ const Login = () => {
 };
 
 export default Login;
-

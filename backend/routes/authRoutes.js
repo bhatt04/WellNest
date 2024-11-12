@@ -65,6 +65,7 @@
 // module.exports = router;
 // authRoutes.js
 // routes/authRoutes.js
+//new
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -73,8 +74,8 @@ const router = express.Router();
 
 // Register a new user
 router.post('/register', async (req, res) => {
-  const { username, email, password } = req.body;
-
+  const { name,  email, password } = req.body;
+//console.log(username);
   try {
     // Check if user already exists
     const existingUser = await User.findOne({ email });
@@ -87,7 +88,7 @@ router.post('/register', async (req, res) => {
 
     // Create and save a new user
     const newUser = new User({
-      username,
+      name,
       email,
       password: hashedPassword,
     });
@@ -131,3 +132,4 @@ router.post('/login', async (req, res) => {
 });
 
 module.exports = router;
+
