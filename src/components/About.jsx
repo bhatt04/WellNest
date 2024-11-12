@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
   return (
@@ -9,7 +10,7 @@ const AboutUs = () => {
         <div className="absolute inset-0 bg-teal-600 opacity-50"></div>
         <div className="relative z-10 flex items-center justify-center h-full">
           <h1 className="text-4xl sm:text-5xl font-semibold text-white text-center px-4">
-            Welcome to <span className="text-yellow-400">Wellnest</span> - Your Path to Wellness
+            Welcome to <span className="text-black">Wellnest</span> - Your Path to Wellness
           </h1>
         </div>
       </section>
@@ -61,8 +62,8 @@ const AboutUs = () => {
               alt="Coach 1"
               className="w-32 h-32 rounded-full mx-auto mb-4"
             />
-            <h3 className="text-xl font-semibold text-teal-700">Amelia Hayes</h3>
-            <p className="text-gray-600">Mindfulness & Meditation Coach</p>
+            <h3 className="text-xl font-semibold text-teal-700">Priyanaka Sharma</h3>
+            <p className="text-gray-600">Yoga & Meditation Coach</p>
           </div>
           
           {/* Coach 2 */}
@@ -72,7 +73,7 @@ const AboutUs = () => {
               alt="Coach 2"
               className="w-32 h-32 rounded-full mx-auto mb-4"
             />
-            <h3 className="text-xl font-semibold text-teal-700">Ethan Brown</h3>
+            <h3 className="text-xl font-semibold text-teal-700">Dr. Namita Nadar</h3>
             <p className="text-gray-600">Certified Nutritionist</p>
           </div>
           
@@ -83,8 +84,8 @@ const AboutUs = () => {
               alt="Coach 3"
               className="w-32 h-32 rounded-full mx-auto mb-4"
             />
-            <h3 className="text-xl font-semibold text-teal-700">Sophia Martinez</h3>
-            <p className="text-gray-600">Yoga & Wellness Instructor</p>
+            <h3 className="text-xl font-semibold text-teal-700">Govind Bhati</h3>
+            <p className="text-gray-600">Workout and Gym Instructor</p>
           </div>
         </div>
       </section>
@@ -96,9 +97,9 @@ const AboutUs = () => {
           <p className="text-lg mb-6 leading-relaxed">
             Take a step towards a healthier, balanced life. Sign up today and become part of a community dedicated to well-being and personal growth.
           </p>
-          <button className="mt-4 px-8 py-3 bg-yellow-400 text-teal-800 font-semibold rounded-lg shadow-lg hover:bg-yellow-300">
+          <Link to="/ContactUs" className="mt-4 px-8 py-3 bg-yellow-400 text-teal-800 font-semibold rounded-lg shadow-lg hover:bg-yellow-300">
             Get Started
-          </button>
+          </Link>
         </div>
       </section>
     </div>
@@ -106,3 +107,4 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+
