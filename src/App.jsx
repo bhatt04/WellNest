@@ -10,6 +10,7 @@ import FitnessCards from "./components/workout";
 import Meditation from "./components/Meditation";
 import NutritionPage from "./components/Nutrition";
 import ContactUs from './components/ContactUs';
+import Footer from './components/Footer';
 
 
 
@@ -36,9 +37,11 @@ function App() {
           <Route path="/meditation" element={<Meditation/>}></Route>
           <Route path="/nutrition" element = {<NutritionPage/>}></Route>
           <Route path="/contact" element = {<ContactUs/>}></Route>
+          <Route path="/footer" element = {<Footer/>}></Route>
 
           {/* <Route path="/journal" element = {<WorkoutJournal/>}></Route> */}
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
