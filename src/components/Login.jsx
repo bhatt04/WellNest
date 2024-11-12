@@ -7,11 +7,14 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false); // Loading state for feedback
   const navigate = useNavigate();
   const { setUserId } = useUser();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError("");
 
     try {
       // Send a POST request to login
@@ -19,36 +22,37 @@ const Login = () => {
       
       // Set user ID in context and save token in localStorage
       setUserId(response.data.userId);
-      localStorage.setItem("token", response.data.token); // Optional, save token for further API requests
+      localStorage.setItem("token", response.data.token);
 
       // Redirect on successful login
       navigate("/journal");
     } catch (error) {
       // Set error message if login fails
-      if (error.response) {
-        setError(error.response.data.message); // From backend error message
-      } else {
-        setError("Server error. Please try again.");
-      }
+      setError(
+        error.response?.data?.message || "An error occurred. Please try again."
+      );
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-pink-900 to-pink-200 text-white">      
-      <div className="relative z-10 flex items-center justify-center min-h-screen bg-sky-100">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-pink-900 to-pink-200 text-white">
+      <div className="relative z-10 flex items-center justify-center min-h-screen bg-opacity-75 bg-sky-100">
         <div
-          className="bg-white p-4 rounded-2xl shadow-xl max-w-md w-full text-center transform transition duration-500 hover:scale-105">
-          <h1 className="text-3xl font-extrabold mb-4 text-blue-600">
+          className="bg-white p-6 rounded-2xl shadow-xl max-w-md w-full text-center transform transition duration-500 hover:scale-105"
+        >
+          <h1 className="text-3xl font-extrabold mb-6 text-blue-600">
             Login
           </h1>
-          {error && <p className="text-red-500 mb-2">{error}</p>}
+          {error && <p className="text-red-500 mb-4">{error}</p>}
           <form onSubmit={handleSubmit}>
             <input
               type="email"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="border text-blue-950 font-semibold p-3 rounded-lg w-full mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="border text-blue-950 font-semibold p-3 rounded-lg w-full mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
             <input
@@ -56,17 +60,20 @@ const Login = () => {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="border text-blue-950 font-semibold p-3 rounded-lg w-full mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="border text-blue-950 font-semibold p-3 rounded-lg w-full mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
             <button
               type="submit"
-              className="w-1/4 py-3 bg-white text-pink-600 border-2 border-pink-600 font-semibold rounded-lg shadow-lg hover:bg-pink-400 hover:text-white"
+              disabled={loading} // Disable button while loading
+              className={`w-full py-3 bg-pink-600 text-white font-semibold rounded-lg shadow-lg transition-colors hover:bg-pink-500 ${
+                loading && "opacity-50 cursor-not-allowed"
+              }`}
             >
-              Login
+              {loading ? "Logging in..." : "Login"}
             </button>
           </form>
-          <p className="mt-4 text-gray-700">
+          <p className="mt-6 text-gray-700">
             Don’t have an account?{" "}
             <Link
               to="/register"
@@ -82,3 +89,4 @@ const Login = () => {
 };
 
 export default Login;
+
