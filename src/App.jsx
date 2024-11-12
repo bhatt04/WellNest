@@ -23,19 +23,14 @@ function App() {
         <Routes>
           <Route path="/about" element={<About />} />
           <Route path="/" element={<Home />} />
-
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
-          
-
           <Route path="/nutri" element={<NutritionPage />} />
           <Route path="/medi" element={<Meditation />} />
           <Route path="/workout" element={<FitnessCards/>}/>
           <Route path="/meditation" element={<Meditation/>}></Route>
           <Route path="/nutrition" element = {<NutritionPage/>}></Route>
-
-
         </Routes>
       </div>
     </Router>
