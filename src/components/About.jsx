@@ -58,7 +58,7 @@ const AboutUs = () => {
           {/* Coach 1 */}
           <div className="bg-white p-6 rounded-lg shadow-md max-w-xs text-center">
             <img
-              src="https://example.com/coach1.jpg"
+              src="https://th.bing.com/th/id/OIP.SvRXpnkeoZvIMTOuq9BFhQAAAA?rs=1&pid=ImgDetMain"
               alt="Coach 1"
               className="w-32 h-32 rounded-full mx-auto mb-4"
             />
@@ -69,7 +69,7 @@ const AboutUs = () => {
           {/* Coach 2 */}
           <div className="bg-white p-6 rounded-lg shadow-md max-w-xs text-center">
             <img
-              src="https://example.com/coach2.jpg"
+              src="https://th.bing.com/th/id/OIP.2Q_PJ9Tiy7dzoHXgfFE8pAHaHa?rs=1&pid=ImgDetMain"
               alt="Coach 2"
               className="w-32 h-32 rounded-full mx-auto mb-4"
             />
@@ -80,7 +80,7 @@ const AboutUs = () => {
           {/* Coach 3 */}
           <div className="bg-white p-6 rounded-lg shadow-md max-w-xs text-center">
             <img
-              src="https://example.com/coach3.jpg"
+              src="https://th.bing.com/th/id/OIP.audMX4ZGbvT2_GJTx2c4GgHaHw?w=860&h=900&rs=1&pid=ImgDetMain"
               alt="Coach 3"
               className="w-32 h-32 rounded-full mx-auto mb-4"
             />

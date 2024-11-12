@@ -1,14 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Wellnest from "../assets/WellNest title.jpg";
 import ImageSlider from "./slider";
 import BmiCalculator from "./bmi";
+import WorkoutJournal from "./WorkoutJournal";
 
 
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white-200">
+    <div className="min-h-screen bg-white-200 ">
 
       <main className="container mx-auto px-4 py-12">
         <section className="text-center mb-20">
@@ -21,8 +21,8 @@ export default function Home() {
         </section>
         <section><ImageSlider/></section>
 
-        <section>
 
+        <section>
         <div className="p-6 bg-gray-100 mt-32 bg-blue-200">
   <h2 className="text-3xl font-bold text-center mb-6">OUR SERVICES</h2>
 
@@ -74,6 +74,7 @@ export default function Home() {
 
         </section>
         <section id="bmi"><BmiCalculator/></section>
+        <section id="journal"><WorkoutJournal /></section>
 
       </main>
     </div>
