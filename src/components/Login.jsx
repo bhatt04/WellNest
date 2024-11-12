@@ -1,41 +1,40 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useUser } from "../context/UserContext"; // Import the context
-import { users } from "../backend/db/users"; // Import mock users data
+import { useUser } from "../context/UserContext";
+import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { setUserId } = useUser(); // Get setUserId from context
+  const { setUserId } = useUser();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Find user based on email
-    const user = users.find((user) => user.email === email);
 
-    if (user) {
-      // Check password
-      if (user.password === password) {
-        // Set userId in context
-        setUserId(user.id);
-        localStorage.setItem("userId", user.id); // Store userId in localStorage if needed
+    try {
+      // Send a POST request to login
+      const response = await axios.post("http://localhost:3000/api/auth/login", { email, password });
+      
+      // Set user ID in context and save token in localStorage
+      setUserId(response.data.userId);
+      localStorage.setItem("token", response.data.token); // Optional, save token for further API requests
 
-        // Redirect to /journal after successful login
-        navigate("/journal");
+      // Redirect on successful login
+      navigate("/journal");
+    } catch (error) {
+      // Set error message if login fails
+      if (error.response) {
+        setError(error.response.data.message); // From backend error message
       } else {
-        setError("Incorrect password.");
+        setError("Server error. Please try again.");
       }
-    } else {
-      setError("User not found.");
     }
   };
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-pink-900 to-pink-200 text-white">      
-      
-      {/* Login Content */}
       <div className="relative z-10 flex items-center justify-center min-h-screen bg-sky-100">
         <div
           className="bg-white p-4 rounded-2xl shadow-xl max-w-md w-full text-center transform transition duration-500 hover:scale-105">
