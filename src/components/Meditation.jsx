@@ -92,22 +92,22 @@ function MeditationSteps() {
 
         {/* Timer controls */}
         {!isRunning && !isPaused && !timerStarted && (
-          <button onClick={startTimer} className="btn">
+          <button onClick={startTimer} className="btn bg-green-400 px-2 rounded-md">
             Start Timer
           </button>
         )}
         {isRunning && !isPaused && (
-          <button onClick={pauseTimer} className="btn">
+          <button onClick={pauseTimer} className="btn bg-slate-300 px-2 mx-1 rounded-md">
             Pause Timer
           </button>
         )}
         {!isRunning && isPaused && (
-          <button onClick={resumeTimer} className="btn">
+          <button onClick={resumeTimer} className="btn bg-slate-400 rounded-md">
             Resume Timer
           </button>
         )}
         {(isRunning || isPaused) && (
-          <button onClick={stopTimer} className="btn bg-red-500 hover:bg-red-600">
+          <button onClick={stopTimer} className="btn bg-red-500 rounded-md px-2 mx-2 hover:bg-red-600">
             Stop Timer
           </button>
         )}
@@ -222,7 +222,7 @@ export default function Meditation() {
           Sign up for our newsletter or join live meditation sessions to deepen
           your practice and connect with others.
         </p>
-        <Link to="/signup">
+        <Link to="/contact">
           <button className="mt-3 bg-green-600 p-2 rounded hover:bg-green-700 transition">
             Join Now
           </button>
