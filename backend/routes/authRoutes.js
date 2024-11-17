@@ -73,32 +73,54 @@ const User = require('../models/userModel'); // Import user model
 const router = express.Router();
 
 // Register a new user
+// router.post('/register', async (req, res) => {
+//   const { name,  email, password } = req.body;
+// //console.log(username);
+//   try {
+//     // Check if user already exists
+//     const existingUser = await User.findOne({ email });
+//     if (existingUser) {
+//       return res.status(400).json({ message: 'Email already in use' });
+//     }
+
+//     // Hash password
+//     const hashedPassword = await bcrypt.hash(password, 10);
+
+//     // Create and save a new user
+//     const newUser = new User({
+//       name,
+//       email,
+//       password: hashedPassword,
+//     });
+//     await newUser.save();
+
+//     res.status(201).json({ message: 'User registered successfully' });
+//   } catch (error) {
+//     res.status(500).json({ message: `Error registering user: ${error.message}` });
+//   }
+// });
+
+//new user register
 router.post('/register', async (req, res) => {
-  const { name,  email, password } = req.body;
-//console.log(username);
+  console.log("req received",req.body); // Log the request body
   try {
-    // Check if user already exists
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      return res.status(400).json({ message: 'Email already in use' });
+    const { name, email, password, username } = req.body;
+
+    if (!name || !email || !password || !username) {
+      return res.status(400).json({ message: 'All fields are required' });
     }
 
-    // Hash password
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    // Create and save a new user
-    const newUser = new User({
-      name,
-      email,
-      password: hashedPassword,
-    });
+    const newUser = new User({ name, email, password, username });
     await newUser.save();
 
     res.status(201).json({ message: 'User registered successfully' });
   } catch (error) {
-    res.status(500).json({ message: `Error registering user: ${error.message}` });
+    console.error(error);
+    res.status(500).json({ message: 'Server error', error: error.message });
   }
 });
+
+
 
 // Login a user
 router.post('/login', async (req, res) => {

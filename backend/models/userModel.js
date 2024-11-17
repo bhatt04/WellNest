@@ -41,25 +41,49 @@
 // module.exports = mongoose.model('User', userSchema);
 //const mongoose = require('mongoose');
 
+// const mongoose = require('mongoose');
+
+// const userSchema = new mongoose.Schema({
+//   name: {
+//     type: String,
+//     required: [true, 'Name is required'],  // Ensure 'name' is required
+//   },
+//   email: {
+//     type: String,
+//     required: [true, 'Email is required'],
+//     unique: true,  // Ensure email is unique
+//   },
+//   password: {
+//     type: String,
+//     required: [true, 'Password is required'],
+//   },
+// });
+
+// const User = mongoose.model('User', userSchema);
+
+// module.exports = User;
+
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, 'Name is required'],  // Ensure 'name' is required
+    required: true, // This is why the error is triggered
   },
   email: {
     type: String,
-    required: [true, 'Email is required'],
-    unique: true,  // Ensure email is unique
+    required: true,
+    unique: true,
   },
   password: {
     type: String,
-    required: [true, 'Password is required'],
+    required: true,
+  },
+  username: {
+    type: String,
+    required: true,
+    unique: true,
   },
 });
 
-const User = mongoose.model('User', userSchema);
-
-module.exports = User;
-
+module.exports = mongoose.model('User', userSchema);

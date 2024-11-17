@@ -62,8 +62,8 @@ const Navbar = () => {
 <Link to="/contact">
   <button className="text-black font-bold hover:text-pink-600 px-3 py-2 text-sm">Contact Us</button>
 </Link>
-              <a href="#bmi"><button className="text-blue-600 font-bold hover:text-pink-600 px-2 py-2 text-sm">BMI </button></a>
-              <a href="#journal"><button className="text-blue-600 font-bold hover:text-pink-600 px-2 py-2 text-sm">Journal </button></a>
+              <a href="#bmi"><button className="text-black font-bold hover:text-pink-600 px-2 py-2 text-sm">BMI </button></a>
+              <a href="#journal"><button className="text-black font-bold hover:text-pink-600 px-2 py-2 text-sm">Journal </button></a>
 
               {/* Services Dropdown */}
               <div className="relative" ref={dropdownRef}>
