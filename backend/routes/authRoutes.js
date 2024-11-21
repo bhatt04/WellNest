@@ -5,11 +5,9 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/userModel'); // Import user model
 const router = express.Router();
 
-
-
-//new user register
+//new user register using password hashing
 router.post('/register', async (req, res) => {
-  console.log("req received",req.body); // Log the request body
+  console.log("req received", req.body); // Log the request body
   try {
     const { name, email, password, username } = req.body;
 
@@ -17,7 +15,16 @@ router.post('/register', async (req, res) => {
       return res.status(400).json({ message: 'All fields are required' });
     }
 
-    const newUser = new User({ name, email, password, username });
+    // Hash the password before saving
+    const hashedPassword = await bcrypt.hash(password, 10); // 10 is the salt rounds
+
+    const newUser = new User({
+      name,
+      email,
+      password: hashedPassword, // Save the hashed password
+      username,
+    });
+
     await newUser.save();
 
     res.status(201).json({ message: 'User registered successfully' });
@@ -26,7 +33,6 @@ router.post('/register', async (req, res) => {
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 });
-
 
 
 // Login a user
