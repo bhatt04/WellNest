@@ -64,7 +64,7 @@ const InfoCards = () => {
       {cards.map((card, index) => (
         
         <div key={index} className="w-full sm:w-1/2 lg:w-1/3 bg-white rounded-lg shadow-md p-6 text-center hover:transform hover:-translate-y-2 transition-transform duration-300">
-          <Link to='/contact'><img src={card.image} alt={card.title} className="w-full h-56 object-cover rounded-lg mb-4" /></Link>
+          <Link to='/login'><img src={card.image} alt={card.title} className="w-full h-56 object-cover rounded-lg mb-4" /></Link>
           <h3 className="text-xl font-semibold text-purple-700 mb-2">{card.title}</h3>
           <p className="text-gray-700 text-base leading-relaxed">{card.description}</p>
         </div>
