@@ -70,7 +70,7 @@ We believe in your potential and are here to support you every step of the way. 
 Feel free to reach out if you have any questions or need assistance. We're here to help!
 
 Stay well,  
-The Wellnest Team
+Team Wellnest 
 
 Contact us:(https://wellnest04.netlify.app/contact)`
         };
