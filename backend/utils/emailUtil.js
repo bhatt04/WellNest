@@ -72,7 +72,7 @@ Feel free to reach out if you have any questions or need assistance. We're here 
 Stay well,  
 Team Wellnest 
 
-Contact us:(https://wellnest04.netlify.app/contact)`
+Contact us:(https://wellnest04.netlify.app/)`
         };
 
         await transporter.sendMail(mailOptions);
