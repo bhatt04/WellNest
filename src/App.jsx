@@ -24,14 +24,17 @@ function App() {
   return (
     <Router>
       <div className="App">
+
         {/* Navbar is rendered once and is visible on all pages */}
-        {location.pathname !== "/home" && <Navbar />}
+        {/* {location.pathname === "/" && <Navbar />} */}
+
+        <Navbar />
         <Routes>
           <Route path="/about" element={<AboutUs />} />
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/home" element={<Home />} />
+          {/* <Route path="/home" element={<Home />} /> */}
           <Route path="/nutri" element={<NutritionPage />} />
           <Route path="/medi" element={<Meditation />} />
           <Route path="/workout" element={<FitnessCards/>}/>

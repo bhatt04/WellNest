@@ -17,6 +17,10 @@ const Navbar = () => {
     { name: "Nutrition", path: "/nutrition" },
   ];
 
+  // const handleBMIclick = () => {
+  //   navigate("/#bmi");
+  // };
+
   // Close menu when location changes
   useEffect(() => {
     setIsMenuOpen(false);
@@ -41,7 +45,7 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <Link to="/home" className="flex items-center text-pink-700 hover:text-blue-400 transition duration-300">
+              <Link to="/" className="flex items-center text-pink-700 hover:text-blue-400 transition duration-300">
                 <img src={Wellnest} alt="Wellnest logo" className="w-32 h-auto"/>
               </Link>
             </div>
@@ -51,9 +55,7 @@ const Navbar = () => {
               <button onClick={() => navigate("/")} className="text-black font-bold hover:text-pink-600 px-3 py-2 text-sm">
                 Home
               </button>
-              {/* <button className="text-black font-bold hover:text-pink-600 px-3 py-2 text-sm">About Us</button>
-              <button className="text-black font-bold hover:text-pink-600 px-3 py-2 text-sm">Contact Us</button> */}
-
+             
 
 <Link to="/about">
   <button className="text-black font-bold hover:text-pink-600 px-3 py-2 text-sm">About Us</button>
@@ -62,8 +64,10 @@ const Navbar = () => {
 <Link to="/contact">
   <button className="text-black font-bold hover:text-pink-600 px-3 py-2 text-sm">Contact Us</button>
 </Link>
-              <a href="#bmi"><button className="text-black font-bold hover:text-pink-600 px-2 py-2 text-sm">BMI </button></a>
-              <a href="#journal"><button className="text-black font-bold hover:text-pink-600 px-2 py-2 text-sm">Journal </button></a>
+<a><button className="text-black font-bold hover:text-pink-600 px-2 py-2 text-sm">BMI </button></a>
+
+
+<a href="#journal"><button className="text-black font-bold hover:text-pink-600 px-2 py-2 text-sm">Journal </button></a>
 
               {/* Services Dropdown */}
               <div className="relative" ref={dropdownRef}>

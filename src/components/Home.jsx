@@ -4,12 +4,25 @@ import ImageSlider from "./slider";
 import BmiCalculator from "./bmi";
 import WorkoutJournal from "./WorkoutJournal";
 
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
+const HomePage = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+      if (location.hash === '#bmi') {
+          const element = document.getElementById('bmi');
+          if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+          }
+      }
+  }, [location]);
+}
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white-200 ">
-
       <main className="container mx-auto px-4 py-12">
         <section className="text-center mb-20">
           <div className="bg-white container mx-auto flex flex-col justify-center items-center py-2">
