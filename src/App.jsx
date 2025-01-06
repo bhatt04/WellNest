@@ -5,14 +5,14 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import AboutUs from "./components/About";
 import Home from "./components/Home";
-// import WorkoutJournal from"./components/WorkoutJournal";
+import WorkoutJournal from"./components/WorkoutJournal";
 import FitnessCards from "./components/workout";
 import Meditation from "./components/Meditation";
 import NutritionPage from "./components/Nutrition";
 import ContactUs from './components/ContactUs';
 import UserProfile from "./components/UserProfile";
 import Footer from './components/Footer';
-
+import Bmi from './components/bmi';
 
 
 function App() {
@@ -43,9 +43,9 @@ function App() {
           <Route path="/contact" element = {<ContactUs/>}></Route>
           <Route path="/userprofile" element = {<UserProfile/>}></Route>
           <Route path="/footer" element = {<Footer/>}></Route>
+          <Route path="/bmi" element = {<Bmi />}></Route>
 
-
-          {/* <Route path="/journal" element = {<WorkoutJournal/>}></Route> */}
+          <Route path="/journal" element = {<WorkoutJournal/>}></Route>
         </Routes>
         <Footer />
       </div>

@@ -64,10 +64,13 @@ const Navbar = () => {
 <Link to="/contact">
   <button className="text-black font-bold hover:text-pink-600 px-3 py-2 text-sm">Contact Us</button>
 </Link>
-<a><button className="text-black font-bold hover:text-pink-600 px-2 py-2 text-sm">BMI </button></a>
+<Link to="/bmi">
+  <button className="text-black font-bold hover:text-pink-600 px-2 py-2 text-sm">BMI</button>
+</Link>
+<Link to="/journal">
+  <button className="text-black font-bold hover:text-pink-600 px-2 py-2 text-sm">Journal</button>
+</Link>
 
-
-<a href="#journal"><button className="text-black font-bold hover:text-pink-600 px-2 py-2 text-sm">Journal </button></a>
 
               {/* Services Dropdown */}
               <div className="relative" ref={dropdownRef}>
